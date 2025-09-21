@@ -1,0 +1,12 @@
+    body { font-family: Arial, Helvetica, sans-serif; margin: 0; line-height: 1.5; background: #2bcc16; color: #222; }
+    header { background: #08750a; color: rgb(35, 28, 10); padding: 20px 16px; text-align: center; }
+    nav { display:flex; justify-content:center; gap:12px; padding: 12px; background:#adcca0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);}
+    nav a { text-decoration:none; color:#a95608; font-weight:600; }
+    main { max-width:900px; margin:22px auto; padding: 16px; background:rgb(150, 199, 131); border-radius:8px; box-shadow:0 4px 18px rgba(0,0,0,0.04);}
+    .hero { padding:18px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-top:12px; }
+    .card { padding:12px; border:1px solid #160909; border-radius:6px; background:#fafafa; }
+    footer { text-align:center; padding:14px; color:#666; font-size:14px; }
+    .btn { display:inline-block; padding:8px 12px; border-radius:6px; background:#c78a22; color:white; text-decoration:none; }
+  
+    @media (max-width:420px) { nav { flex-wrap:wrap; } }
