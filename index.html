@@ -1,70 +1,292 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mi Página Sencilla</title>
- <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Hondureña</title>
+    <style>
+     
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f5f0;
+            color: #5d4037;
+            line-height: 1.6;
+        }
+        
+
+        :root {
+            --cafe-claro: #d7ccc8;
+            --cafe-medio: #8d6e63;
+            --cafe-oscuro: #5d4037;
+            --cafe-dorado: #a1887f;
+            --beige: #f5f5f0;
+        }
+        
+  
+        header {
+            background-color: var(--cafe-oscuro);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-style: italic;
+            color: var(--cafe-claro);
+        }
+        
+
+        nav {
+            background-color: var(--cafe-medio);
+            padding: 0.8rem;
+            text-align: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--cafe-claro);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .bienvenida {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .bienvenida h2 {
+            color: var(--cafe-oscuro);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .bienvenida p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+   
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .producto {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .producto:hover {
+            transform: translateY(-5px);
+        }
+        
+        .producto img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .producto-info {
+            padding: 1.2rem;
+        }
+        
+        .producto-info h3 {
+            color: var(--cafe-oscuro);
+            margin-bottom: 0.5rem;
+        }
+        
+        .producto-info .precio {
+            color: var(--cafe-medio);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .sobre-nosotros {
+            background-color: var(--cafe-claro);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        
+        .sobre-nosotros h2 {
+            color: var(--cafe-oscuro);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .contacto {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .contacto h2 {
+            color: var(--cafe-oscuro);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contacto p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Pie de página */
+        footer {
+            background-color: var(--cafe-oscuro);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            
+            .productos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-  <h1>Bienvenido a Mi Página Sencilla de jesler</h1>
-  <p>Un ejemplo censillo de una pequena pagina web para subirla</p>
-  </header>
-
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <main>
-    <section id="inicio" class="hero">
-      <h2>Hola jaja 👋</h2>
-      <p>Esta es una página de ejemplo para practicar. <code>index.html</code>.</p>
-      <a class="btn" href="#contacto">Contáctame</a>
-    </section>
-
-    <section id="servicios">
-      <h3>Servicios</h3>
-      <div class="grid">
-        <div class="card">
-          <h4>Diseño Web</h4>
-          <p>Creación de páginas sencillas y adaptables.</p>
-        </div>
-        <div class="card">
-          <h4>Soporte Técnico</h4>
-          <p>Instalación y mantenimiento de equipos.</p>
-        </div>
-        <div class="card">
-          <h4>Videos</h4>
-          <p>Edición básica y subida a canales.</p>
-        </div>
-      </div>
-    </section>
-    <section id="contacto" style="margin-top:18px;">
-      <h3>Contacto</h3>
-      <p>Ejemplo de un pequeño formulario ja:</p>
-
-      <form action="mailto:tu-email@ejemplo.com" method="post" enctype="text/plain">
-        <label>Nombre:<br />
-          <input type="text" name="Nombre" placeholder="Tu nombre" required />
-        </label>
-        <br /><br />
-        <label>Mensaje:<br />
-          <textarea name="Mensaje" rows="4" cols="40" placeholder="Escribe algo..." required></textarea>
-        </label>
-        <br /><br />
-        <button type="submit" class="btn">Enviar por email</button>
-      </form>
-
-      <p style="margin-top:12px; color:#666;">O copia y pega este email: <strong>tu-email@ejemplo.com</strong></p>
-    </section>
-  </main>
-
-  <footer>
-  <span id="year"></span> Mi Página Sencilla de jesler  — para subirla a git hub ❤️
-  </footer>
-
+    <header>
+        <h1>Cafetería Hondureña</h1>
+        <p>El auténtico sabor del café de las montañas</p>
+    </header>
+    
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Sobre Nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    
+    <div class="container">
+        <section id="inicio" class="bienvenida">
+            <h2>Bienvenidos a nuestra cafetería</h2>
+            <p>Disfruta del mejor café hondureño, cultivado en las fértiles montañas de nuestro país. Nuestros granos son seleccionados cuidadosamente y tostados artesanalmente para ofrecerte una experiencia única de sabor y aroma.</p>
+        </section>
+        
+        <section id="productos">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--cafe-oscuro);">Nuestros Productos</h2>
+            <div class="productos">
+            
+                <div class="producto">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Café Hondureño Premium">
+                    <div class="producto-info">
+                        <h3>Café Hondureño Premium</h3>
+                        <p>Una taza de nuestro café más exclusivo, con notas de chocolate y frutos secos.</p>
+                        <p class="precio">L. 45.00</p>
+                    </div>
+                </div>
+           
+                <div class="producto">
+                    <img src="2.jpg" alt="Pastelería Artesanal">
+                    <div class="producto-info">
+                        <h3>Pastelería Artesanal</h3>
+                        <p>Deliciosos pasteles y postres elaborados con ingredientes frescos y naturales.</p>
+                        <p class="precio">L. 35.00 - L. 65.00</p>
+                    </div>
+                </div>
+      
+                <div class="producto">
+                    <img src="3.jpg" alt="Bocadillos Hondureños">
+                    <div class="producto-info">
+                        <h3>Bocadillos Hondureños</h3>
+                        <p>Sabores tradicionales en bocadillos como baleadas, pupusas y más.</p>
+                        <p class="precio">L. 25.00 - L. 55.00</p>
+                    </div>
+                </div>
+                
+             
+                <div class="producto">
+                    <img src="4.jpeg" alt="Capuchino Hondureño">
+                    <div class="producto-info">
+                        <h3>Capuchino Hondureño</h3>
+                        <p>Nuestro capuchino con el mejor café hondureño y una suave espuma de leche.</p>
+                        <p class="precio">L. 55.00</p>
+                    </div>
+                </div>
+                
+         
+                <div class="producto">
+                    <img src="5.avif" alt="Café Frío Especial">
+                    <div class="producto-info">
+                        <h3>Café Frío Especial</h3>
+                        <p>Refrescante café frío preparado con nuestro grano premium y un toque de vainilla.</p>
+                        <p class="precio">L. 60.00</p>
+                    </div>
+                </div>
+                
+           
+                <div class="producto">
+                    <img src="6.jpg" alt="Té de Hierbas Hondureñas">
+                    <div class="producto-info">
+                        <h3>Té de Hierbas Hondureñas</h3>
+                        <p>Infusión de hierbas naturales cultivadas en las montañas hondureñas.</p>
+                        <p class="precio">L. 35.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="nosotros" class="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos una cafetería familiar que comenzó en 2010 con la misión de compartir la riqueza del café hondureño con el mundo. Trabajamos directamente con pequeños productores locales para garantizar la mejor calidad y apoyar a nuestras comunidades.</p>
+            <p>Nuestro compromiso es ofrecer productos auténticos que reflejen la cultura y tradición hondureña, en un ambiente cálido y acogedor donde todos se sientan como en casa.</p>
+        </section>
+        
+        <section id="contacto" class="contacto">
+            <h2>Contacto</h2>
+            <p><strong>Dirección:</strong> Calle recta que dirije al 21 de octubre cerca de la gasolinera</p>
+            <p><strong>Teléfono:</strong> +504 9999-3345</p>
+            <p><strong>Horario:</strong> Lunes a Sábado: 7:00 am - 8:00 pm</p>
+            <p><strong>Domingos:</strong> 8:00 am - 6:00 pm</p>
+        </section>
+    </div>
+    
+  
 </body>
 </html>
